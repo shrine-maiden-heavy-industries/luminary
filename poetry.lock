@@ -1,14 +1,14 @@
 [[package]]
 name = "pyusb"
-version = "1.1.1"
+version = "1.2.1"
 description = "Python USB access module"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6.0"
 
 [[package]]
 name = "pyvcd"
-version = "0.2.4"
+version = "0.3.0"
 description = "Python VCD file support"
 category = "main"
 optional = false
@@ -17,14 +17,14 @@ python-versions = ">=3.6"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "8112dcfc5fac0ae7fe9025e45dae41cd102bcdaa8f5325e3cdbecd954178aec2"
+content-hash = "a75eb07373e4de5aaddd9ee816986504b7890191d3b5812dd6776d33e7958d89"
 
 [metadata.files]
 pyusb = [
-    {file = "pyusb-1.1.1-py3-none-any.whl", hash = "sha256:f18eb813d3a1439918071234589162c2f209a19adbeffeb1377ce078a4aebc70"},
-    {file = "pyusb-1.1.1.tar.gz", hash = "sha256:7d449ad916ce58aff60b89aae0b65ac130f289c24d6a5b7b317742eccffafc38"},
+    {file = "pyusb-1.2.1-py3-none-any.whl", hash = "sha256:2b4c7cb86dbadf044dfb9d3a4ff69fd217013dbe78a792177a3feb172449ea36"},
+    {file = "pyusb-1.2.1.tar.gz", hash = "sha256:a4cc7404a203144754164b8b40994e2849fde1cfff06b08492f12fff9d9de7b9"},
 ]
 pyvcd = [
-    {file = "pyvcd-0.2.4-py2.py3-none-any.whl", hash = "sha256:c40b0e586a74cddaf82e6989f0168ae7f9b4f182a9a106a0da9df0d11a9c6b3b"},
-    {file = "pyvcd-0.2.4.tar.gz", hash = "sha256:071e51a8362908ad5a2a12f078185639b98b20b653a56f01679de169d0fa425d"},
+    {file = "pyvcd-0.3.0-py2.py3-none-any.whl", hash = "sha256:971dfe5a3e68663115c6edf3f0b611ff9e8427513db16281eb4516ebcd65a336"},
+    {file = "pyvcd-0.3.0.tar.gz", hash = "sha256:ec4d9198bd20f9e07d78f6558ff8bcd45b172ee332e7e8a4588727eeb6a362bc"},
 ]
