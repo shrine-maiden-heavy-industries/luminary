@@ -52,14 +52,11 @@ endif
 
 # Set TOP to be the fully resolved path for where the top of the tinyusb tree
 # is, and CURRENT_PATH as where we are relative to that.
-THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
-TOP := $(patsubst %/Makefile,%,$(THIS_MAKEFILE))/$(TINYUSB_PATH)
-
 ifeq ($(CMDEXE),1)
-TOP := $(subst \,/,$(shell for %%i in ( $(TOP) ) do echo %%~fi))
+TOP := $(subst \,/,$(shell for %%i in ( $(TINYUSB_PATH) ) do echo %%~fi))
 CURRENT_PATH := $(subst $(TOP)/,,$(subst \,/,$(shell echo %CD%)))
 else
-TOP := $(shell realpath $(TOP))
+TOP := $(shell realpath $(TINYUSB_PATH))
 CURRENT_PATH := $(shell realpath --relative-to=$(TOP) `pwd`)
 endif
 
