@@ -42,8 +42,28 @@ ifeq ($(CC), intercept-cc)
 	USE_INTERCEPT_CC := yes
 endif
 
+# Figure out where we are exactly and set up tinyusb's `TOP` and `CURRENT_PATH` variables.
+
+# Detect whether shell style is windows or not
+# https://stackoverflow.com/questions/714100/os-detecting-makefile/52062069#52062069
+ifeq '$(findstring ;,$(PATH))' ';'
+CMDEXE := 1
+endif
+
+# Set TOP to be the fully resolved path for where the top of the tinyusb tree
+# is, and CURRENT_PATH as where we are relative to that.
+THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
+TOP := $(patsubst %/Makefile,%,$(THIS_MAKEFILE))/$(TINYUSB_PATH)
+
+ifeq ($(CMDEXE),1)
+TOP := $(subst \,/,$(shell for %%i in ( $(TOP) ) do echo %%~fi))
+CURRENT_PATH := $(subst $(TOP)/,,$(subst \,/,$(shell echo %CD%)))
+else
+TOP := $(shell realpath $(TOP))
+CURRENT_PATH := $(shell realpath --relative-to=$(TOP) `pwd`)
+endif
+
 # Include the tinyusb basis BSP.
-include $(TINYUSB_PATH)/tools/top.mk
 include $(TINYUSB_PATH)/examples/make.mk
 
 # If we're using intercept-build, override our compiler back to intercept-cc.
