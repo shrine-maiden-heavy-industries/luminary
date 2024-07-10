@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "apollo-fpga"
+name = "luminary-fpga"
 version = "0.0.5"
-description = "host tools for Apollo FPGA debug controllers"
+description = "host tools for Luminary FPGA debug controllers"
 authors = ["Great Scott Gadgets <info@greatscottgadgets.com>"]
 license = "BSD"
 
@@ -13,7 +13,7 @@ pyvcd = "^0.3.0"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.scripts]
-apollo = 'apollo_fpga.commands.cli:main'
+luminary = 'luminary_fpga.commands.cli:main'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
